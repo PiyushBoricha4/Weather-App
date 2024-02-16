@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Weather app</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Weather app</a>
+      <form class="d-flex">
+        <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit" id="Sub">Search</button>
+      </form>
+    </div>
+  </nav>
+
+    
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal">Weather for <span id="cityname"></span></h1>
+        <p class="fs-5 text-muted">All city weather are showing here.</p>
+      </div>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Tempreture</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><img id="wicon" src="weatherforec.jpg" height="100px" width="90px" alt="Enter city name"/> <span id="temp2"></span>&#8451;</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Tempreture is <span id="temp"></span></li>
+                  <li>Min tempreture is <span id="min_temp"></span></li>
+                  <li>Max tempreture is <span id="max_temp"></span></li>
+                  <li>Pressure is <span id="pre"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Humadity Information</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><img src="images.png" height="100px" width="90px"/><span id="hum2"></span>&percnt;</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Cloud is <span id="clo"></span></li>
+                  <li>Feels like is <span id="Feels"></span></li>
+                  <li>Visibility is <span id="vis"></span></li>
+                  <li>Humidity is <span id="hum"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Wind Information</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><img src="speed.jpg" height="100px" width="150px"/><span id="speed2"></span>km/h</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Speed is <span id="speed"></span></li>
+                  <li>Degree is <span id="deg"></span></li>
+                  <li>Sunrise is <span id="rise"></span></li>
+                  <li>Sunset is <span id="set"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+        <h2 class="display-6 text-center mb-4">Weather for another city</h2>
+    
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%;"></th>
+                <th style="width: 22%;">Tempreture</th>
+                <th style="width: 22%;">Clouds</th>
+                <th style="width: 22%;">Humidity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Mumbai</th>
+                <td><span id="rtn"></span></td>
+                <td><span id="clon"></span></td>
+                <td><span id="huma"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Ahmedabad</th>
+                <td><span id="stn"></span></td>
+                <td><span id="ptn"></span></td>
+                <td><span id="mtn"></span></td>
+              </tr>
+    
+              <tr>
+                <th scope="row" class="text-start">Bhavnagar</th>
+                <td><span id="btemp"></span></td>
+                <td><span id="bclon"></span></td>
+                <td><span id="bhum"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Maharastra</th>
+                <td><span id="mtemp"></span></td>
+                <td><span id="mclon"></span></td>
+                <td><span id="mhum"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Olpad</th>
+                <td><span id="otemp"></span></td>
+                <td><span id="oclon"></span></td>
+                <td><span id="ohum"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Pune</th>
+                <td><span id="ptemp"></span></td>
+                <td><span id="pclon"></span></td>
+                <td><span id="phum"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="scipt.js"></script>
+</body>
+</html>
